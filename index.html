@@ -10,17 +10,30 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- link Plotly -->
     <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+
 </head>
 
 <body>
+    <nav class="navbar bg-warning">
+        <div class="containe container-fluid text-center">
+            <span class="navbar-brand mb-0 h1">
+                <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="">
+            </span>
+            <h3>Grupo 4</h3>
+        </div>
+    </nav>
+
     <!-- consumir enpoint -->
     <div class="container text-center">
-        <h1>Consumir POKEAPI</h1>
+        <br><br>
+        <h1 class="containe text-center display-4">Consumir POKEAPI</h1>
         <div>
             <label for="endPoint" class="form-label">
                 <b>Ingrese endPoint:</b>
             </label>
             <br>
+            <span class="badge text-bg-light">https://pokeapi.co/api/v2/pokemon/ditto</span>
+            <br> <br>
             <input type="text" class="form-control-sm text-center" placeholder="endPoint" id="endPoint">
             <br>
             <button class="btn btn-success mt-4" onclick="consumir()">Consultar</button>
@@ -29,18 +42,25 @@
         <div id="resultado" class="mt-4 d-block">Resultado:</div>
 
         <!-- Graficos -->
-        <div>
+        <div class="container text-center">
             <br><br>
             <!--<h2>Grafica de barras</h2>-->
             <div id="myDiv1"></div>
             <!--<h2>Grafica de pay</h2>-->
             <div id="myDiv2"></div>
-            <!--<h2>Box Plot</h2>--> 
+            <!--<h2>Box Plot</h2>-->
             <div id="myDiv3"></div>
             <!--<h2>Bubble Chart</h2>-->
             <div id="myDiv4"></div>
         </div>
     </div>
+
+    <!--Pie de página-->
+    <footer class="footer  fixed-bottom bg-warning">
+        <div class="container text-center">
+            <span> &copy; Grupo 4 | 2023</span>
+        </div>
+    </footer>
 
 
     <!-- link archivo js -->
