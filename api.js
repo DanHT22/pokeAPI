@@ -1,10 +1,10 @@
 // CONSUMIR LA API
 function consumir() {
   var endPoint = document.getElementById('endPoint').value;
-  var nom = '';
-  var baseExp = '';
-  var nom1 = '';
-  var baseExp1 = '';
+  var nomIndex = '';
+  var gameIndex = '';
+  var nomIndex1 = '';
+  var gameIndex1 = '';
   var data = [];
   var datap = [];
   var layoutp = [];
@@ -24,35 +24,18 @@ function consumir() {
 
     //Promesa recibe los datos en formato JSON
     .then(function (datos) {
-      // var height = [];
-      // var weight = [];
-      /*const obj = JSON.parse(datos);
-
-      console.log("esto es una prueba"+obj);*/
-
-      //en que parte ejecutas el codigo?
-
-      // height.push(datos.height);
-      // weight.push(datos.weight);
-      // console.log(height);
-      // console.log(weight);
-
-      //Las siguientes dos lineas sirven para imprimir los datos extraidos
-      //console.log('nombre'+datos['abilities'][0]['ability']['name']);
-      //console.log('baseExp'+datos['base_experience']);
-      //Aquí convertimos esos mismos datos en variables
-      nom = datos['abilities'][1]['ability']['name'];
-      baseExp = datos['base_experience'];
-      //Aquí nada mas imprimimos esos mismos datos. Nomas para asegurarnos que si creamos bien las variables 
-
-      //console.log('Nombre '+nom);
-      //console.log('BaseExp '+baseExp);
-
-      //Grafica de barras
+      
+      var nomIndex = [];
+      var gameIndex = [];
+      console.log(nomIndex);
+      console.log(gameIndex);
+      for (var i = 0; i < 5; i++) {
+        nomIndex.push(datos['game_indices'][i]['version']['name']);
+        gameIndex.push(datos['game_indices'][i]['game_index']);}
       data = [
         {
-          x: [nom],
-          y: [baseExp],
+          x: nomIndex,
+          y: gameIndex,
           type: 'bar',
           orientation: "v",
           marker: { color: "rgba(0,0,255)" }
@@ -70,8 +53,8 @@ function consumir() {
       // Grafica de pie
       datap = [
         {
-          values: [baseExp],
-          labels: [[nom], [nom]],
+          values: gameIndex,
+          labels: nomIndex, nomIndex,
           type: "pie",
         }
       ];
@@ -87,7 +70,7 @@ function consumir() {
       //grafica box
 
       trace2 = {
-        y: [baseExp],
+        y: gameIndex,
         type: 'box'
       };
 
@@ -96,24 +79,23 @@ function consumir() {
 
       Plotly.newPlot('myDiv3', dataBP);
 
-      //Grafica Burbuja
-      trace1 = {
-        x: [nom],
-        y: [baseExp],
+       //Grafica de burbujas
+       var trace1 = {
+        x: nomIndex,
+        y: gameIndex,
         mode: 'markers',
         marker: {
-          color: ['red'],
-          size: [20]
+          size: [40, 60, 80, 100]
         }
       };
-
-      datab = [trace1];
-
-      layoutb = {
-        title: "Plotting Bubbles"
+      var data = [trace1];
+      var layout = {
+        title: 'Marker Size',
+        showlegend: false,
+        height: 600,
+        width: 600
       };
-
-      Plotly.newPlot('myDiv4', datab, layoutb);
+      Plotly.newPlot('myDiv4', data, layout);
     })
 }
 
