@@ -13,9 +13,9 @@ Los 4 graficos que se visualizan son:
 ---
 Integrantes:
 
-Amanda Huerta
-Daniela M. Sánchez
-Daniela Heredia
+- Amanda Huerta
+- Daniela M. Sánchez
+- Daniela Heredia
 
 ---
 
