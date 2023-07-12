@@ -67,6 +67,20 @@ function consumir(){
         //Recordar cambiar el myDiv1 por myDiv2,3 o 4
         Plotly.newPlot('myDiv1', data,layoutgb);
 
+                 // Grafica de pie
+ datap= [
+    {
+        values: [baseExp1],
+        labels: [nom1],
+        type: "pie",
+    }
+];
+
+  layoutp = {
+    title: "Pie Charts"
+  };
+  
+  Plotly.newPlot('myDiv2', datap,layoutp);
 //Grafica Burbuja
   trace1= {
   x:[nom],
