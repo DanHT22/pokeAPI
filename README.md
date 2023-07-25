@@ -13,10 +13,10 @@ Los 4 graficos que se visualizan son:
 ---
 Integrantes:
 
-- Amanda Huerta
-- Daniela M. Sánchez
-- Daniela Heredia
-
+- Amanda Huerta (https://github.com/amandiuHT)
+- Daniela M. Sánchez (https://github.com/DanielaSanchez130571)
+- Daniela Heredia (https://github.com/DanHT22)
 ---
 
 Kuepa, 2023
+
